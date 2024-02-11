@@ -7,7 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\Patient.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\Patient.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="GenericRepository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\Patient.js" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,12 +9,9 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+@* <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PatientNo)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Amount)
             </th>
@@ -30,9 +27,7 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PatientNo)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Amount)
             </td>
@@ -50,4 +45,21 @@
         </tr>
 }
     </tbody>
-</table>
+</table> *@
+<partial name="_PatientTable" />
+@* <table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table data will be populated dynamically -->
+    </tbody>
+</table> *@
+@section Scripts {
+    @{
+        <script asp-src-include="~/js/Patient.js"></script>
+    }
+}
+

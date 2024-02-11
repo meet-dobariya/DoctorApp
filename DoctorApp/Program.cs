@@ -1,5 +1,8 @@
-using DoctorApp;
+using DoctorApp.Configuration;
+using DoctorApp.DataContext;
+using DoctorApp.Interface;
 using DoctorApp.Models;
+using DoctorApp.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +11,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped(typeof(ISqlRepository<>), typeof(SqlDBRepository<>));
+builder.Services.SetupDIServices();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

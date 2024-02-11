@@ -1,7 +1,7 @@
 ﻿using DoctorApp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DoctorApp
+namespace DoctorApp.DataContext
 {
     public class ApplicationDbContext : DbContext
     {

@@ -30,15 +30,17 @@ namespace DoctorApp.Controllers
 
 
         // GET: Patients/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var amount = await _patientRepository.TotalAmount();
+            ViewData["amount"] = amount;
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(Patient patient)
         {
-            var data = await _patientRepository.AddPatient(patient);
+            await _patientRepository.AddPatient(patient);
             return RedirectToAction("Create");
         }
 

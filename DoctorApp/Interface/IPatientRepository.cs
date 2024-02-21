@@ -6,5 +6,6 @@ namespace DoctorApp.Interface
     {
         Task<Patient> AddPatient(Patient patient);
         Task<IEnumerable<Patient>> GetAllPatient();
+        Task<int> TotalAmount();
     }
 }
